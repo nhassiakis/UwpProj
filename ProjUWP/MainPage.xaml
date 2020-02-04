@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="ProjUWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid>
+            <NavigationView x:Name="NavView"
+                        IsBackButtonVisible="Collapsed"
+                        IsSettingsVisible="False"
+                        Header="Welcome"
+                        IsPaneOpen="False"
+                        SelectionChanged="MenuSelected">
+                <NavigationView.MenuItems>
+                    <NavigationViewItem Icon="Home" Content="Home" Tag="home"/>
+                    <NavigationViewItem Content="ApiOne" Tag="api1">
+                        <NavigationViewItem.Icon>
+                            <FontIcon Glyph="&#xE7C3;"/>
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem Icon="AddFriend" Content="ApiTwo" Tag="api2"/>
+                </NavigationView.MenuItems>
+                <Frame x:Name="ContentFrame"/>
+            </NavigationView>
+        </Grid>
+    </Grid>
+</Page>
