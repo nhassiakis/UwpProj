@@ -30,6 +30,7 @@ namespace ProjUWP
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            
         }
 
         /// <summary>
