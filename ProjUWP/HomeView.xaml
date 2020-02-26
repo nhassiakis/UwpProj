@@ -9,6 +9,88 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Image Source="Images/homePage.png" VerticalAlignment="Top"/>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" Width="Auto" Source="Images/apiJoke.png" VerticalAlignment="Top"/>
+        <Grid Grid.Row="1" Background="Black">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <!--Place for choosing what genres to include-->
+            <Grid Grid.Row="0" Grid.Column="0">
+                <TextBlock x:Name="CategoriesToChoose" Text="Categories to choose from:" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                    
+                <ToggleButton Height="Auto" Grid.Row="0" Click="Toggle_Any" x:Name="Any" Content="Any"></ToggleButton>
+                <ToggleButton Height="Auto" Grid.Column="0" Grid.Row="1" Click="Toggle_Any" x:Name="Custom" Content="Custom"></ToggleButton>
+
+                <ToggleButton Grid.Row="1" Grid.Column="1" Click="Toggle_Any" x:Name="Prog" Content="Programming"></ToggleButton>
+                <ToggleButton Grid.Row="1" Grid.Column="2" Click="Toggle_Any" x:Name="Misc" Content="Miscellaneous"></ToggleButton>
+                <ToggleButton Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="4" Click="Toggle_Any" x:Name="Dark" Content="Dark"></ToggleButton>
+            </Grid>
+            <!--Flags to blacklist-->
+            <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="(Optional)" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                <CheckBox x:Name="nsfw" Content="nsfw" Grid.Row="0" Grid.Column="1"/>
+                <CheckBox x:Name="religious" Content="religious" Grid.Row="0" Grid.Column="2"/>
+                <CheckBox x:Name="political" Content="political" Grid.Row="1" Grid.Column="0"/>
+                <CheckBox x:Name="racist" Content="racist" Grid.Row="1" Grid.Column="1"/>
+                <CheckBox x:Name="sexist" Content="sexist" Grid.Row="1" Grid.Column="2"/>
+            </Grid>
+            
+            <!--Search joke that contains string-->
+            <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="What's your name?"/>
+                    <StackPanel Margin="0,0,0,0">
+
+                        <TextBox x:Name="nameInput"
+                     Header="Enter search string:" PlaceholderText="Search"
+                     Width="300"/>
+
+                        <Button Content="Hello button"/>
+                    </StackPanel>
+                    <TextBlock x:Name="greetingOutput"/>
+                </StackPanel>
+
+                <!--<TextBlock x:Name="inputString" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" TextDecorations="Underline"/>-->
+
+            </Grid>
+
+        </Grid>
     </Grid>
 </Page>

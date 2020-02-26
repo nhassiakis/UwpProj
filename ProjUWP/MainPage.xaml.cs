@@ -27,8 +27,15 @@ namespace ProjUWP
         {
             this.InitializeComponent();
             ContentFrame.Navigate(typeof(HomeView));
-            var api = new API();
-            api.GetApiKey();
+            Flags flags = new Flags();
+            API api = new API
+            {
+                Category = "any",
+                Type = "twopart",
+                Joke = "Two Flags walked into a bar to order two drinks \n Cyke flags can't walk.",
+                Flags = new Flags { Nsfw = false, Sexist = false, Political = false, Racist = false, Religious = false}  
+            };
+            
 
         }
 

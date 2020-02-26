@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjUWP.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,17 @@ namespace ProjUWP
     /// </summary>
     public sealed partial class HomeView : Page
     {
+        API jokeApi = new API();
         public HomeView()
         {
             this.InitializeComponent();
+        }
+
+
+        private void Toggle_Any(object sender, RoutedEventArgs e)
+        {
+            string cateogrie = "any";
+            jokeApi.Category = cateogrie;
         }
     }
 }
