@@ -23,7 +23,7 @@ namespace ProjUWP
     /// </summary>
     /// 
 
-    public class Categories
+    public class Category
     {
         public bool AnyVal { get; set; }
         public bool CustomVal { get; set; }
@@ -44,16 +44,27 @@ namespace ProjUWP
 
         private void Toggle_Any(object sender, RoutedEventArgs e)
         {
-            Categories categories = new Categories
+            List<Category> categories = new List<Category>()
             {
-                AnyVal = Any.IsChecked.Value,
-                CustomVal = Custom.IsChecked.Value,
-                ProgrammingVal = Prog.IsChecked.Value,
-                MiscVal = Misc.IsChecked.Value,
-                DarkVal = Dark.IsChecked.Value,
+                
+
+
             };
 
-            if (categories.AnyVal == true)
+            foreach (var category in categories)
+            {
+                category.AnyVal = Any.IsChecked.Value;
+                category.CustomVal = Custom.IsChecked.Value;
+                category.ProgrammingVal = Prog.IsChecked.Value;
+                category.MiscVal = Misc.IsChecked.Value;
+                category.DarkVal = Dark.IsChecked.Value;
+                categories.Add(category);
+            }
+
+
+
+            bool anyValue = categories.Select(v => v.AnyVal).FirstOrDefault();
+            if (anyValue == true)
             {
                 Custom.IsEnabled = false;
                 Prog.IsEnabled = false;
@@ -69,7 +80,7 @@ namespace ProjUWP
                 Misc.IsEnabled = true;
                 Dark.IsEnabled = true;
 
-                foreach (Categories category in categories)
+                foreach (Category category in categories)
                 {
 
                 }
