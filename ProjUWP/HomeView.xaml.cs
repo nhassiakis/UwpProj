@@ -42,49 +42,53 @@ namespace ProjUWP
         }
 
 
+
+
         private void Toggle_Any(object sender, RoutedEventArgs e)
         {
-            List<Category> categories = new List<Category>()
+            string selectedToppingsText = string.Empty;
+            ToggleButton[] toggleButtons = new ToggleButton[] { Any, Custom, Prog, Misc, Dark };
+            foreach (ToggleButton button in toggleButtons)
             {
-                
-
-
-            };
-
-            foreach (var category in categories)
-            {
-                category.AnyVal = Any.IsChecked.Value;
-                category.CustomVal = Custom.IsChecked.Value;
-                category.ProgrammingVal = Prog.IsChecked.Value;
-                category.MiscVal = Misc.IsChecked.Value;
-                category.DarkVal = Dark.IsChecked.Value;
-                categories.Add(category);
-            }
-
-
-
-            bool anyValue = categories.Select(v => v.AnyVal).FirstOrDefault();
-            if (anyValue == true)
-            {
-                Custom.IsEnabled = false;
-                Prog.IsEnabled = false;
-                Misc.IsEnabled = false;
-                Dark.IsEnabled = false;
-
-                jokeApi.Category = "any";
-            }
-            else
-            {
-                Custom.IsEnabled = true;
-                Prog.IsEnabled = true;
-                Misc.IsEnabled = true;
-                Dark.IsEnabled = true;
-
-                foreach (Category category in categories)
+                if (Any.IsChecked == true)
                 {
+                    Custom.IsEnabled = false;
+                    Prog.IsEnabled = false;
+                    Misc.IsEnabled = false;
+                    Dark.IsEnabled = false;
+
+
+                    //jokeApi.Category = "any";
+                }
+                else if (Any.IsChecked != true)
+                {
+                    Custom.IsChecked = true;
+
+                    Custom.IsEnabled = true;
+                    Prog.IsEnabled = true;
+                    Misc.IsEnabled = true;
+                    Dark.IsEnabled = true;
 
                 }
+                if (button.IsChecked == true)
+                {
+                    if (selectedToppingsText.Length > 1)
+                    {
+                        selectedToppingsText += ",";
+                    }
+                    selectedToppingsText += button.Content;
+                }
             }
+            if (selectedToppingsText == "Custom")
+            {
+                selectedToppingsText = "any";
+            }
+            if (Any.IsChecked == true)
+            {
+                toppingsList.Text = "any";
+            }
+            else
+            toppingsList.Text = selectedToppingsText;
 
             //jokeApi.Category = cateogrie;
         }
