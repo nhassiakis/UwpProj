@@ -50,6 +50,7 @@ namespace ProjUWP
             ToggleButton[] toggleButtons = new ToggleButton[] { Any, Custom, Prog, Misc, Dark };
             foreach (ToggleButton button in toggleButtons)
             {
+
                 if (Any.IsChecked == true)
                 {
                     Custom.IsEnabled = false;
@@ -76,10 +77,14 @@ namespace ProjUWP
                     {
                         selectedToppingsText += ",";
                     }
-                    selectedToppingsText += button.Content;
+                    if (Custom != button)
+                    {
+                        selectedToppingsText += button.Content;
+
+                    }
                 }
             }
-            if (selectedToppingsText == "Custom")
+            if (selectedToppingsText == string.Empty)
             {
                 selectedToppingsText = "any";
             }
@@ -88,14 +93,20 @@ namespace ProjUWP
                 toppingsList.Text = "any";
             }
             else
-            toppingsList.Text = selectedToppingsText;
+                toppingsList.Text = selectedToppingsText;
 
             //jokeApi.Category = cateogrie;
         }
 
-        private void Any_Click(object sender, RoutedEventArgs e)
-        {
 
+        private void blackListClick(object sender, RoutedEventArgs e)
+        {
+            string selectedToppingsText = string.Empty;
+            CheckBox[] toggleCheckBox = new CheckBox[] { nsfw, religious, political, sexist, racist };
+            foreach (CheckBox button in toggleCheckBox)
+            {
+
+            }
         }
     }
 }

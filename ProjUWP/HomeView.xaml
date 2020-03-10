@@ -73,6 +73,7 @@
                     Click="Toggle_Any"
                     Content="Custom" />
 
+
                 <ToggleButton
                     x:Name="Prog"
                     Grid.Row="1"
@@ -117,26 +118,31 @@
                     x:Name="nsfw"
                     Grid.Row="0"
                     Grid.Column="1"
+                    Click="blackListClick"
                     Content="nsfw" />
                 <CheckBox
                     x:Name="religious"
                     Grid.Row="0"
                     Grid.Column="2"
+                    Click="blackListClick"
                     Content="religious" />
                 <CheckBox
                     x:Name="political"
                     Grid.Row="1"
                     Grid.Column="0"
+                    Click="blackListClick"
                     Content="political" />
                 <CheckBox
                     x:Name="racist"
                     Grid.Row="1"
                     Grid.Column="1"
+                    Click="blackListClick"
                     Content="racist" />
                 <CheckBox
                     x:Name="sexist"
                     Grid.Row="1"
                     Grid.Column="2"
+                    Click="blackListClick"
                     Content="sexist" />
             </Grid>
 
