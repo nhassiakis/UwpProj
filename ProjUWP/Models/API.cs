@@ -9,12 +9,21 @@ namespace ProjUWP.Models
 {
     public class API
     {
-        public string ApiKey { get; set; }
-
+        public API()
+        {
+            Category = "any";
+            Type = string.Empty;
+            Search = string.Empty;
+            Joke = string.Empty;
+            Flags = string.Empty;
+        }
+        
         public string Category { get; set; }
+        public string Url { get; set; }
         public string Type { get; set; }
+        public string Search { get; set; }
         public string Joke { get; set; }
-        public Flags Flags { get; set; }
+        public string Flags { get; set; }
 
         //public void GetApiKey()
         //{
@@ -23,17 +32,5 @@ namespace ProjUWP.Models
         //    ApiKey = reader.ReadToEnd();
         //}
 
-        public void FlagsAttributes(bool flagN, bool flagRe, bool flagP, bool flagR, bool flagS)
-        {
-            Flags flags = new Flags
-            {
-                Nsfw = flagN,
-                Religious = flagRe,
-                Political = flagP,
-                Racist = flagR,
-                Sexist = flagS,
-            };
     }
-}
-
 }

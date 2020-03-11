@@ -33,7 +33,9 @@ namespace ProjUWP
                 Category = "any",
                 Type = "twopart",
                 Joke = "Two Flags walked into a bar to order two drinks \n Cyke flags can't walk.",
-                Flags = new Flags { Nsfw = false, Sexist = false, Political = false, Racist = false, Religious = false}  
+                Flags = string.Empty,
+                Search = string.Empty,
+                //Flags = new Flags { Nsfw = false, Sexist = false, Political = false, Racist = false, Religious = false}  
             };
             
 
