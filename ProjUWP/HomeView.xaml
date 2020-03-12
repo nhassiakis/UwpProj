@@ -17,7 +17,7 @@
             Grid.Row="0"
             Width="Auto"
             VerticalAlignment="Top"
-            Source="Images/apiJoke.png" />
+            Source="Images/jokes_header.jpg" />
         <Grid Grid.Row="1" Background="Black">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -41,7 +41,6 @@
                     VerticalAlignment="Center"
                     FontSize="16"
                     Text="Categories to choose from:" />
-                <TextBlock x:Name="toppingsList" />
             </Grid>
             <Grid
                 Grid.Row="0"
@@ -185,6 +184,7 @@
                 <!--<TextBlock x:Name="inputString" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" TextDecorations="Underline"/>-->
             </Grid>
             <Grid
+                Background="White"
                 Grid.Row="5"
                 Grid.RowSpan="2"
                 Grid.Column="0"
@@ -192,12 +192,13 @@
                 <TextBlock
                     Name="output"
                     Grid.Row="0"
-                    Width="1480"
+                    Width="Auto"
                     Margin="0,56,0,23"
                     HorizontalAlignment="Center"
-                    Foreground="Aqua"
+                    Foreground="Black"
+                    AllowFocusOnInteraction="True"
                     ScrollViewer.VerticalScrollBarVisibility="Auto"
-                    Text="Lorem ipsum test 123"
+                    ScrollViewer.HorizontalScrollBarVisibility="Auto"
                     TextAlignment="Center" />
             </Grid>
 

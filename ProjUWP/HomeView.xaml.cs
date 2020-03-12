@@ -99,7 +99,6 @@ namespace ProjUWP
             }
             else
             {
-                toppingsList.Text = selectedToppingsText;
                 jokeApi.Category = selectedToppingsText;
             }
         }
@@ -121,7 +120,6 @@ namespace ProjUWP
                     selectedToppingsText += checkBox.Content;
                 }
             }
-            toppingsList.Text = selectedToppingsText;
             jokeApi.Flags = selectedToppingsText;
         }
 
@@ -142,7 +140,6 @@ namespace ProjUWP
                         selectedToppingsText = string.Empty;
                 }
             }
-            toppingsList.Text = selectedToppingsText;
             jokeApi.Type = selectedToppingsText;
         }
 

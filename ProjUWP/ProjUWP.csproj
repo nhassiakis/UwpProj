@@ -138,6 +138,7 @@
   <ItemGroup>
     <Content Include="Images\apiJoke.png" />
     <Content Include="Images\homePage.png" />
+    <Content Include="Images\jokes_header.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
