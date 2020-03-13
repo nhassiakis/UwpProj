@@ -219,11 +219,19 @@ namespace ProjUWP
                 if (joke.type == "single")
                 {
                     // If type == "single", the joke only has the "joke" property
+                    if (joke.joke == string.Empty)
+                    {
+                        output.Text = "No jokes found";
+                    }
                     output.Text = joke.joke;
                 }
                 else
                 {
                     // If type == "twopart", the joke has the "setup" and "delivery" properties
+                    if (joke.setup == string.Empty && joke.delivery == string.Empty)
+                    {
+                        output.Text = "No jokes found";
+                    }
                     output.Text = joke.setup;
                  
                     output.Text +=  "\n" + joke.delivery;

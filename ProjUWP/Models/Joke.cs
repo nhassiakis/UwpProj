@@ -8,6 +8,14 @@ namespace ProjUWP.Models
 {
     public class Joke
     {
+
+        public Joke()
+        {
+            type = string.Empty;
+            joke = string.Empty;
+            setup = string.Empty;
+            delivery = string.Empty;
+        }
         public string type { get; set; }
         public string joke { get; set; }
         public string setup { get; set; }
